@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Board detail start</h1>
+name : {{ object.name }}
+<br/>
+id : {{ object.id }}
+<br/>
+description :{{ object.description }}
+<br/>
+<h1>Board detail End</h1>
+<h1>Board Topics start</h1>
+{% for topic in   object.topics.all %}
+    {{ topic.id }}
+    {{ topic.last_update }}
+    {{ topic.topic_starter_id }}
+    {{ topic.topic_subject }}
+    {{ topic.board_id }}
+    <h1>Board topics end</h1>
+    <h1>Board posts start</h1>
+    {% for post in topic.posts.all %}
+        {{ post.id }}
+        {{ post.message }}
+        {{ post.created_at }}
+        {{ post.created_by.username }}
+        {{ post.updated_at }}
+        {{ post.updated_by.username }}
+     <h1>Board Posts end</h1>
+    {% endfor %}
+
+{% endfor %}
+
+
+</body>
+</html>

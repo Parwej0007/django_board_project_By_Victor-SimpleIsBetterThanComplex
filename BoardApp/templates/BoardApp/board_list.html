@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active">Boards</li>
+    </ol>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">S.No</th>
+            <th scope="col">Board</th>
+            <th scope="col">Posts</th>
+            <th scope="col">Topics</th>
+            <th scope="col">Last Post</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for board in object_list %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td> <a href="#"> {{ board.name }}<small class="text-muted d-block">{{ board.description }}</small></a></td>
+                <td>{{ board.topic_count }}</td>
+                <td>{{ board.post_count }}</td>
+                <td>{{ board.get_last.updated_at|date}} by {{ board.get_last.updated_by.username }}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <ol class="breadcrumb my-4">
+        <li class="breadcrumb-item active"><a href="{% url 'board_index' %}">Board </a></li>
+        <li class="breadcrumb-item active">{{ board.name }} </li>
+    </ol>
+    <div class="mt-3">
+        <a href="{% url 'new_topic' board.pk %}" class="btn btn-primary btn-sm" role="button">New Topic</a>
+    </div>
+
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Topic</th>
+            <th scope="col">Stater</th>
+            <th scope="col">Replies</th>
+            <th scope="col">Views</th>
+            <th scope="col">Last Updated</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for topic in topics %}
+            <tr>
+                <th scope="row"> <a href="{% url 'topic_posts' topic.pk %}">{{ topic.topic_subject}}  </a> </th>
+                <td>  {{ topic.topic_stater }} </td>
+                <td>{{ topic.replies }}</td>
+                <td>{{ board.topic_count }}</td>
+                <td>{{ topic.last_update|date}}</td>
+            </tr>
+        {% endfor %}
+
+
+{%  endblock %}

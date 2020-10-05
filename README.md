@@ -1,2 +1,3 @@
 
-## Board is like a subject(Django) which is created by admin, In same subject any user can create new topic(orm, admin, view etc) and that topic can have many post for discussion by user.
+## Board is Plateform in which have many subject (eg- python, django), Only the admin can create the subjects.
+## Each subject will have many topics and each topic can have many posts (topics and post can be created by any User's)

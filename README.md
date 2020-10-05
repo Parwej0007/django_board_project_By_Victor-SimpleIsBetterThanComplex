@@ -7,7 +7,7 @@ Board dashboard Subjects (subject only created by Admin).
 ![](board_subject_screenshot.png)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
-Topics of each subject (anyone can create).
+Subject topics (anyone can create).
 ![](topic_Screenshot.png)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
